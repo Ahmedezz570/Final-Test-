@@ -36,10 +36,15 @@ connectDB();
   
 // }
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`🚀 Server is running on http://localhost:${PORT}`);
-  });
-// module.exports = app;
+// app.listen(PORT, () => {
+//     console.log(`🚀 Server is running on http://localhost:${PORT}`);
+//   });
+
+if (require.main === module) {
+  app.listen(3000, () => console.log("Server running"));
+}
+
+module.exports = app;
 
 
 // const Config = require('./models/ConfigSchema');
